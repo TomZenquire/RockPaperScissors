@@ -28,29 +28,3 @@ function getWinner(humanChoice, computerChoice) {
   } else ;
   computerScore = computerScore + 1; return "Computer wins";
 };
-
-function playRound(humanChoice, computerChoice) {
-	alert( getWinner(humanChoice, computerChoice).concat(
-    ".\nHuman has ",convertToRPS(humanChoice),
-    ".\nComputer has ",convertToRPS(computerChoice) ,
-    ".\n\nComputer score: ",computerScore,"\nHuman Score: ",humanScore)
-    );
-	};
-
-function playGame(numberRounds) {
-  for (let i = 1; i <= numberRounds; i++) {
-    let textChoice = prompt("Pick your move (Rock, paper or scissors)");
-    humanChoice = convertRPSToNumber(textChoice);
-    computerChoice = getRndInteger(1, 3);
-    playRound(humanChoice, computerChoice);
-  };
-};
-
-
-void(playGame(5));
-function finalMessage(humanScore, computerScore) {
-  if (humanScore === computerScore) {return "It's a draw!"} else;
-  if (humanScore > computerScore) {return "Human wins!"} else;
-  return "Computer wins!"
-}
-alert(finalMessage(humanScore, computerScore).concat("\nHuman has: ", humanScore,"\nComputer has: ", computerScore))

@@ -27,10 +27,10 @@ function convertRPSToNumber (textInput) {
 
 function getWinner(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
-    return "Draw!"
+        return "Draw!"
   } else;
   if (humanChoice === 1 && computerChoice === 3 || humanChoice === 1 && computerChoice === 3 || humanChoice === 3 && computerChoice === 2) {
-    humanScore = humanScore + 1; return "Human wins!"
+    humanScore = humanScore + 1; document.getElementById("humanScore").textContent = humanScore; return "Human wins!"
   } else ;
-  computerScore = computerScore + 1; return "Computer wins!";
+  computerScore = computerScore + 1; document.getElementById("computerScore").textContent = computerScore; return "Computer wins!";
 };

@@ -1,6 +1,12 @@
 humanScore = 0
 computerScore = 0
 
+function singleRound(humanInput) {
+  let computerInput = getRndInteger(1,3);
+  alert ("Human has: " + convertToRPS(humanInput) + "\n" +
+    "Computer has: " + convertToRPS(computerInput) + "\n" +
+    getWinner(humanInput,computerInput))
+}
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
@@ -24,7 +30,7 @@ function getWinner(humanChoice, computerChoice) {
     return "Draw!"
   } else;
   if (humanChoice === 1 && computerChoice === 3 || humanChoice === 1 && computerChoice === 3 || humanChoice === 3 && computerChoice === 2) {
-    humanScore = humanScore + 1; return "Human wins"
+    humanScore = humanScore + 1; return "Human wins!"
   } else ;
-  computerScore = computerScore + 1; return "Computer wins";
+  computerScore = computerScore + 1; return "Computer wins!";
 };

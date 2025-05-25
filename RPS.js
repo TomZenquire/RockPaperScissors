@@ -5,7 +5,14 @@ function singleRound(humanInput) {
   let computerInput = getRndInteger(1,3);
   alert ("Human has: " + convertToRPS(humanInput) + "\n" +
     "Computer has: " + convertToRPS(computerInput) + "\n" +
-    getWinner(humanInput,computerInput))
+    getWinner(humanInput,computerInput));
+  if (humanScore === 3) {alert ("Game over!\nHuman wins!"); disableButtons()}
+  if (computerScore === 3) {alert ("Game over!\nComputer wins!"); disableButtons()}
+}
+
+function disableButtons () {
+  const buttons = document.querySelectorAll('button')
+  buttons.forEach((button) => {button.setAttribute('disabled', 'true')})
 }
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
